@@ -1,0 +1,22 @@
+{
+    "files.associations": {
+        "*.c": "c",
+        "*.h": "c"
+    },
+    "files.autoGuessEncoding": false,
+    "files.encoding": "gb2312",
+    "[markdown]": {
+        "files.encoding": "utf8"
+    },
+    "[python]": {
+        "files.encoding": "utf8"
+    },
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "mdk": true
+    }
+}
