@@ -6,7 +6,11 @@
                 "firmware/cmsis/core",
                 "firmware/cmsis/device",
                 "firmware/driver/inc",
-                "driver"
+                "app",
+                "driver",
+                "third_lib/crc",
+                "third_lib/ringbuffer",
+                "third_lib/easylogger"
             ],
             "defines": [
                 "STM32F40_41xxx",

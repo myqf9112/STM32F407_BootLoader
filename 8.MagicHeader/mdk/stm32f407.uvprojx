@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F40_41xxx,USE_STDPERIPH_DRIVER,HSE_VALUE=8000000</Define>
               <Undefine></Undefine>
-              <IncludePath>..\firmware\cmsis\core;..\firmware\cmsis\device;..\firmware\driver\inc;..\driver</IncludePath>
+              <IncludePath>..\firmware\cmsis\core;..\firmware\cmsis\device;..\firmware\driver\inc;..\driver;..\app;..\third_lib;..\third_lib\crc;..\third_lib\ringbuffer;..\third_lib\easylogger</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -385,11 +385,6 @@
           <GroupName>app</GroupName>
           <Files>
             <File>
-              <FileName>jumpapp.s</FileName>
-              <FileType>2</FileType>
-              <FilePath>..\app\jumpapp.s</FilePath>
-            </File>
-            <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\app\main.c</FilePath>
@@ -400,44 +395,14 @@
               <FilePath>..\app\board.c</FilePath>
             </File>
             <File>
+              <FileName>jumpapp.s</FileName>
+              <FileType>2</FileType>
+              <FilePath>..\app\jumpapp.s</FilePath>
+            </File>
+            <File>
               <FileName>bootloader.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\app\bootloader.c</FilePath>
-            </File>
-            <File>
-              <FileName>ringbuffer.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\app\ringbuffer.c</FilePath>
-            </File>
-            <File>
-              <FileName>ringbuffer.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\app\ringbuffer.h</FilePath>
-            </File>
-            <File>
-              <FileName>crc16.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\app\crc16.c</FilePath>
-            </File>
-            <File>
-              <FileName>crc16.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\app\crc16.h</FilePath>
-            </File>
-            <File>
-              <FileName>stm32flash.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\app\stm32flash.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32flash.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\app\stm32flash.h</FilePath>
-            </File>
-            <File>
-              <FileName>crc32.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\app\crc32.c</FilePath>
             </File>
             <File>
               <FileName>magic_header.c</FileName>
@@ -448,6 +413,11 @@
               <FileName>utils.h</FileName>
               <FileType>5</FileType>
               <FilePath>..\app\utils.h</FilePath>
+            </File>
+            <File>
+              <FileName>bitops.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\app\bitops.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -465,16 +435,6 @@
               <FilePath>..\driver\console.c</FilePath>
             </File>
             <File>
-              <FileName>tim_delay.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\driver\tim_delay.c</FilePath>
-            </File>
-            <File>
-              <FileName>tim_delay.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\driver\tim_delay.h</FilePath>
-            </File>
-            <File>
               <FileName>key.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\driver\key.c</FilePath>
@@ -483,6 +443,16 @@
               <FileName>led.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\driver\led.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32flash.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\driver\stm32flash.c</FilePath>
+            </File>
+            <File>
+              <FileName>tim_delay.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\driver\tim_delay.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -717,7 +687,59 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>third_lib</GroupName>
+          <GroupName>third_lib/crc</GroupName>
+          <Files>
+            <File>
+              <FileName>crc16.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\third_lib\crc\crc16.c</FilePath>
+            </File>
+            <File>
+              <FileName>crc32.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\third_lib\crc\crc32.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>third_lib/ringbuffer</GroupName>
+          <Files>
+            <File>
+              <FileName>ringbuffer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\third_lib\ringbuffer\ringbuffer.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>third_lib/easylogger</GroupName>
+          <Files>
+            <File>
+              <FileName>elog.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\third_lib\easylogger\elog.c</FilePath>
+            </File>
+            <File>
+              <FileName>elog_port.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\third_lib\easylogger\elog_port.c</FilePath>
+            </File>
+            <File>
+              <FileName>elog_utils.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\third_lib\easylogger\elog_utils.c</FilePath>
+            </File>
+            <File>
+              <FileName>elog.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\third_lib\easylogger\elog.h</FilePath>
+            </File>
+            <File>
+              <FileName>elog_cfg.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\third_lib\easylogger\elog_cfg.h</FilePath>
+            </File>
+          </Files>
         </Group>
       </Groups>
     </Target>
